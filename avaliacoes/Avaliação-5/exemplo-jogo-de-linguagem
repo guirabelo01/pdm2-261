@@ -1,0 +1,37 @@
+abstract class Animal {
+  String nome;
+
+  Animal(this.nome);
+
+  String falar(); 
+}
+
+
+class Cachorro extends Animal {
+  Cachorro(String nome) : super(nome);
+
+  @override
+  String falar() => '$nome diz: Au au!';
+}
+
+
+class Gato extends Animal {
+  Gato(String nome) : super(nome);
+
+  @override
+  String falar() => '$nome diz: Miau!';
+}
+
+void main() {
+
+  List<Animal> animais = [
+    Cachorro('Rex'),
+    Gato('Mimi'),
+    Cachorro('Bolt'),
+  ];
+
+  for (var animal in animais) {
+    print(animal.falar());
+  }
+}
+
